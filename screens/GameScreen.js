@@ -7,7 +7,7 @@ const GameScreen = () => {
       <Title>Opponent's Guess</Title>
       {/* GUESS */}
       <View>
-        <Text>Higher or Lower</Text>
+        <Text style={styles.text}>Higher or Lower</Text>
         {/* + - */}
       </View>
       {/* <View>LOG ROUNDS</View> */}
@@ -30,5 +30,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#ddb52f",
     padding: 12,
+  },
+  text: {
+    fontSize: 20,
+    marginTop: 20,
+    color: "white",
+    textAlign: "center",
   },
 });

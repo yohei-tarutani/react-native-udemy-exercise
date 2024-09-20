@@ -51,22 +51,24 @@ export default function App() {
 
   return (
     // {styles.rootScreen} 1st = (for linear-gradient colors)
-    <LinearGradient
-      colors={[Colors.primary700, Colors.accent500]}
-      style={styles.rootScreen}
-    >
-      <ImageBackground
-        source={require("./assets/images/background.png")}
-        resizeMode="cover"
-        // {styles.rootScreen} 2nd = (for background image)
+    <>
+      <StatusBar style="light" />
+      <LinearGradient
+        colors={[Colors.primary700, Colors.accent500]}
         style={styles.rootScreen}
-        // {styles.backgroundImage} = (for opacity on background image)
-        imageStyle={styles.backgroundImage}
       >
-        <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
-      </ImageBackground>
-      <StatusBar style="auto" />
-    </LinearGradient>
+        <ImageBackground
+          source={require("./assets/images/background.png")}
+          resizeMode="cover"
+          // {styles.rootScreen} 2nd = (for background image)
+          style={styles.rootScreen}
+          // {styles.backgroundImage} = (for opacity on background image)
+          imageStyle={styles.backgroundImage}
+        >
+          <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
+        </ImageBackground>
+      </LinearGradient>
+    </>
   );
 }
 

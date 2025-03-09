@@ -11,8 +11,6 @@ const deviceWidth = Dimensions.get("window").width;
 
 const styles = StyleSheet.create({
   inputContainer: {
-    // flex: 1,
-    // justifyContent: "center",
     alignItems: "center",
     marginTop: deviceWidth < 400 ? 18 : 36,
     marginHorizontal: 24,

@@ -29,7 +29,7 @@ const GameOverScreen = ({ roundsNumber, userNumber, onStartNewGame }) => {
         <Title>GAME OVER!</Title>
         <View style={[styles.imageContainer, imageStyle]}>
           <Image
-            source={require("../assets/images/success.png")}
+            source={require("../assets/images/dice.jpg")}
             style={styles.image}
           />
         </View>
@@ -79,6 +79,6 @@ const styles = StyleSheet.create({
   },
   hightlight: {
     fontFamily: "open-sans-bold",
-    color: Colors.primary500,
+    color: Colors.primary600,
   },
 });

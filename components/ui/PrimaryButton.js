@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: "white",
     textAlign: "center",
+    fontWeight: "bold",
   },
   // pressed btn styling for iOS
   pressed: {

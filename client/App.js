@@ -7,6 +7,7 @@ import { useState } from "react";
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
 import GameOverScreen from "./screens/GameOverScreen";
+import SigninScreen from "./screens/SinginScreen";
 
 export default function App() {
   const [userNumber, setUserNumber] = useState();
@@ -25,7 +26,10 @@ export default function App() {
     setUserNumber(null);
     setGuessRounds(0);
   };
-  let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
+  let screen = <SigninScreen />;
+  // if (aaa)  {
+  //   screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
+  // }
   if (userNumber) {
     screen = (
       <GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />
@@ -43,8 +47,9 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style="light" />
-      <LinearGradient
+      <StatusBar style="dark" />
+      {screen}
+      {/* <LinearGradient
         colors={[Colors.primary700, Colors.accent500]}
         style={styles.rootScreen}
       >
@@ -56,7 +61,7 @@ export default function App() {
         >
           <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
         </ImageBackground>
-      </LinearGradient>
+      </LinearGradient> */}
     </>
   );
 }

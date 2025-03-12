@@ -1,6 +1,5 @@
 import {
   Image,
-  ImageBackground,
   Keyboard,
   KeyboardAvoidingView,
   Platform,
@@ -11,29 +10,54 @@ import {
   TouchableWithoutFeedback,
   View,
 } from "react-native";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { useNavigation } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-// import { IOS_CLIENT_ID, ANDROID_CLIENT_ID } from "../../config/googleConfig";
-// import { login, signinWithGoogle } from "@/components/services/api";
-// Firebase Authentication
-// import * as Google from "expo-auth-session/providers/google";
-// import AsyncStorage from "@react-native-async-storage/async-storage";
-// import * as WebBrowser from "expo-web-browser";
-// import {
-//   GoogleAuthProvider,
-//   onAuthStateChanged,
-//   signInWithCredential,
-//   signOut,
-// } from "firebase/auth";
-// import { auth } from "../../config/firebaseConfig";
-// import { AppContext } from "@/store/app-context";
+// Authentication
+import * as WebBrowser from "expo-web-browser";
+import * as Google from "expo-auth-session/providers/google";
+import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
+import { auth } from "../config/firebaseConfig";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {
+  androidClientId,
+  expoWebClientId,
+  iosClientId,
+  redirectUri,
+} from "../config/googleConfig";
 
-// WebBrowser.maybeCompleteAuthSession();
+WebBrowser.maybeCompleteAuthSession();
 
-const SigninScreen = () => {
-  // const { fontsLoaded } = useContext(AppContext);
+const SigninScreen = ({ setUserInfo }) => {
+  // Google & Firebase sign-in
+  const [request, response, promptAsync] = Google.useAuthRequest({
+    expoWebClientId: expoWebClientId,
+    iosClientId: iosClientId,
+    androidClientId: androidClientId,
+    redirectUri: redirectUri,
+  });
 
+  useEffect(() => {
+    if (response?.type === "success") {
+      const { id_token } = response.params;
+      handleFirebaseSignIn(id_token);
+    }
+  }, [response]);
+
+  const handleFirebaseSignIn = async (idToken) => {
+    try {
+      const credential = GoogleAuthProvider.credential(idToken);
+      const userCredential = await signInWithCredential(auth, credential);
+      const user = userCredential.user;
+
+      await AsyncStorage.setItem("userInfo", JSON.stringify(user));
+      setUserInfo(user);
+    } catch (error) {
+      console.error("Firebase sign-in error: ", error.message);
+    }
+  };
+
+  // Email & Password sign-in
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
 
@@ -76,126 +100,31 @@ const SigninScreen = () => {
     setPasswordIsValid(isPasswordValid);
   }, [enteredPassword]);
 
-  // sign-in handler function
-  // const signInHandler = async () => {
-  //   setIsSubmitted(true);
+  // Email & Password sign-in handler function
+  const signInHandler = async () => {
+    setIsSubmitted(true);
 
-  //   if (emailIsValid && passwordIsValid) {
-  //     // use log-in API
+    if (emailIsValid && passwordIsValid) {
+      // use log-in API
 
-  //     const response = await login(enteredEmail, enteredPassword);
-  //     console.log("Response: " + response);
-  //     if (response?.status == 200) {
-  //       navigation.navigate("Category");
-  //     } else if (response?.status == 400) {
-  //       setEmailError(
-  //         response.response ? response.response.data.message : response.message
-  //       );
-  //       setEmailIsValid(false);
-  //     } else {
-  //       setPasswordError(response?.data?.message);
-  //       setPasswordIsValid(false);
-  //     }
-  //   }
-  // };
-
-  // Google Sign-in setup
-  // const [userInfo, setUserInfo] = useState(null);
-  // const [request, response, promptAsync] = Google.useAuthRequest({
-  //   iosClientId: IOS_CLIENT_ID,
-  //   androidClientId: ANDROID_CLIENT_ID,
-  // });
-
-  // Check for existing user info in local storage on page load
-  // useEffect(() => {
-  //   loadUserFromStorage();
-  // }, []);
-
-  // Load user data from local storage if available
-  // const loadUserFromStorage = async () => {
-  //   try {
-  //     const userJSON = await AsyncStorage.getItem("userInfo");
-  //     if (userJSON) {
-  //       setUserInfo(JSON.parse(userJSON));
-  //     }
-  //   } catch (error) {
-  //     console.error("Error loading user info from storage: ", error.message);
-  //   }
-  // };
-
-  // Initiates Google Sign-In flow when the button is clicked
-  // const GoogleSigninHandler = async () => {
-  //   try {
-  //     if (userInfo) {
-  //       // User info exists, skip sign-in and proceed with Google sign-in process
-  //       await handleSigninWithGoogle(userInfo);
-  //     } else {
-  //       // No user info, initiate Google sign-in flow
-  //       await promptAsync();
-  //     }
-  //   } catch (error) {
-  //     console.error("Error initiating Google Sign-In: ", error.message);
-  //   }
-  // };
-
-  // Handles Firebase sign-in using Google ID token
-  // useEffect(() => {
-  //   if (response?.type === "success") {
-  //     const { id_token } = response.params;
-  //     handleFirebaseSignIn(id_token);
-  //   }
-  // }, [response]);
-
-  // Signs in with Firebase and saves user data locally
-  // const handleFirebaseSignIn = async (idToken) => {
-  //   try {
-  //     const credential = GoogleAuthProvider.credential(idToken);
-  //     const userCredential = await signInWithCredential(auth, credential);
-  //     const user = userCredential.user;
-
-  //     await handleSigninWithGoogle(user);
-  //     await AsyncStorage.setItem("userInfo", JSON.stringify(user));
-  //     setUserInfo(user);
-  //   } catch (error) {
-  //     console.error("Error with Firebase sign-in: ", error.message);
-  //   }
-  // };
-
-  // Executes signinWithGoogle and navigates based on response
-  // const handleSigninWithGoogle = async (user) => {
-  //   const { email, firstName, lastName } = formatGoogleAccountData(user);
-  //   const responseGoogle = await signinWithGoogle(email, firstName, lastName);
-
-  //   if (responseGoogle?.status === 200) {
-  //     navigation.navigate("Category");
-  //   } else if (responseGoogle?.status === 201) {
-  //     navigation.navigate("OnboardingOne");
-  //   } else {
-  //     console.error("Error during Google sign-in");
-  //   }
-  // };
-
-  // Formats Google user data for use in the app
-  // const formatGoogleAccountData = (userData) => {
-  //   const { email, displayName } = userData;
-  //   const firstName = displayName.split(" ")[0];
-  //   const lastName = displayName.split(" ")[1] || "";
-  //   return { email, firstName, lastName };
-  // };
-
-  // if (!fontsLoaded) {
-  //   return null; // return null if fonts aren't loaded
-  // }
+      const response = await login(enteredEmail, enteredPassword);
+      console.log("Response: " + response);
+      if (response?.status == 200) {
+        navigation.navigate("Category");
+      } else if (response?.status == 400) {
+        setEmailError(
+          response.response ? response.response.data.message : response.message
+        );
+        setEmailIsValid(false);
+      } else {
+        setPasswordError(response?.data?.message);
+        setPasswordIsValid(false);
+      }
+    }
+  };
 
   return (
     <View style={styles.container}>
-      {/* <View style={styles.imageContainer}>
-        <ImageBackground
-          source={require("../../assets/images/signin-background.png")}
-          style={styles.backgroundImage}
-        />
-      </View> */}
-
       {/* input fields area */}
       <KeyboardAvoidingView
         style={{ flex: 0.6 }}
@@ -308,7 +237,8 @@ const SigninScreen = () => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.googleButton}
-          // onPress={GoogleSigninHandler}
+          // onPress={() => promptAsync()}
+          onPress={() => promptAsync()}
         >
           <Image source={require("../assets/images/google-signin-icon.png")} />
           <Text style={styles.googleButtonText}>Continue with Google</Text>
@@ -345,18 +275,6 @@ const styles = StyleSheet.create({
     rowGap: 12,
     paddingTop: 140,
   },
-  // imageContainer: {
-  //   flex: 1,
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  // },
-  // backgroundImage: {
-  //   width: 360,
-  //   height: 360,
-  //   flex: 1,
-  //   justifyContent: "center",
-  //   alignItems: "center",
-  // },
   titleContainer: {
     marginBottom: 80,
   },

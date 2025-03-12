@@ -2,6 +2,7 @@
   "expo": {
     "name": "react-native-udemy2",
     "slug": "react-native-udemy2",
+    "scheme": "react-native-udemy2",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
@@ -12,13 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.wmdd4950.ytarutani-project"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.wmdd4950.ytarutani_project"
     },
     "web": {
       "favicon": "./assets/favicon.png"

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "330033612093",
+    "project_id": "react-native-udemy-exercise",
+    "storage_bucket": "react-native-udemy-exercise.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:330033612093:android:f89c645c52f07517b47154",
+        "android_client_info": {
+          "package_name": "com.wmdd4950.ytarutani_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "330033612093-5l1fajnep3bslu68divf7n68hbcklcdf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCR7dSuk8DhyppuMgxfpeRRXC1DS_D62ls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "330033612093-5l1fajnep3bslu68divf7n68hbcklcdf.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "330033612093-ue18gv3qhu2gjpvsf6usiundmaikmuaj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.wmdd4950.ytarutani-project"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -110,7 +110,7 @@ const SigninScreen = ({ setUserInfo }) => {
       const response = await login(enteredEmail, enteredPassword);
       console.log("Response: " + response);
       if (response?.status == 200) {
-        navigation.navigate("Category");
+        // navigation.navigate("Category");
       } else if (response?.status == 400) {
         setEmailError(
           response.response ? response.response.data.message : response.message
@@ -294,7 +294,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   fieldLabel: {
-    fontFamily: "MavenPro-Bold",
     fontSize: 15,
     fontWeight: "bold",
     color: "#5a4949",
@@ -313,7 +312,6 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingHorizontal: 8,
     paddingVertical: 12,
-    fontFamily: "MavenPro-Medium",
   },
   fieldAlert: {
     flexDirection: "row",
@@ -326,7 +324,6 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingHorizontal: 8,
     paddingVertical: 12,
-    fontFamily: "MavenPro-Medium",
   },
   passwordField: {
     flexDirection: "row",
@@ -339,7 +336,6 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingHorizontal: 8,
     paddingVertical: 12,
-    fontFamily: "MavenPro-Medium",
   },
   alertContainer: {
     flexDirection: "row",
@@ -349,7 +345,6 @@ const styles = StyleSheet.create({
   },
   alertText: {
     color: "red",
-    fontFamily: "Roboto-Medium",
   },
   buttonsContainer: {
     flex: 0.5,
@@ -368,7 +363,6 @@ const styles = StyleSheet.create({
   },
   signinButtonText: {
     fontSize: 18,
-    fontFamily: "Mulish-ExtraBold",
     color: "#5a4949",
     fontWeight: "bold",
   },
@@ -386,7 +380,6 @@ const styles = StyleSheet.create({
   },
   googleButtonText: {
     fontSize: 16,
-    fontFamily: "Mulish-ExtraBold",
     color: "#5a4949",
     fontWeight: "bold",
   },
@@ -395,7 +388,6 @@ const styles = StyleSheet.create({
   },
   forgetPasswordButtonText: {
     fontSize: 16,
-    fontFamily: "Mulish-ExtraBold",
     color: "blue",
   },
   signupTextContainer: {
@@ -407,13 +399,11 @@ const styles = StyleSheet.create({
   },
   signupText: {
     color: "black",
-    fontFamily: "Roboto-Regular",
     color: "#5a4949",
   },
   signupLinkButton: {},
   signupLinkText: {
     color: "blue",
     fontSize: 16,
-    fontFamily: "Roboto-Bold",
   },
 });

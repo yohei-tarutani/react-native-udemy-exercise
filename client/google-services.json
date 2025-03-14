@@ -1,37 +1,37 @@
 {
   "project_info": {
-    "project_number": "330033612093",
-    "project_id": "react-native-udemy-exercise",
-    "storage_bucket": "react-native-udemy-exercise.firebasestorage.app"
+    "project_number": "469992452339",
+    "project_id": "strong-keyword-453402-d0",
+    "storage_bucket": "strong-keyword-453402-d0.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:330033612093:android:f89c645c52f07517b47154",
+        "mobilesdk_app_id": "1:469992452339:android:2e4333c28a4741ebb18786",
         "android_client_info": {
           "package_name": "com.wmdd4950.ytarutani_project"
         }
       },
       "oauth_client": [
         {
-          "client_id": "330033612093-5l1fajnep3bslu68divf7n68hbcklcdf.apps.googleusercontent.com",
+          "client_id": "469992452339-103tsfe1nccf0immmg52hsajg1h7k0es.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCR7dSuk8DhyppuMgxfpeRRXC1DS_D62ls"
+          "current_key": "AIzaSyDAzzomzXBNTm0681lkH8qbmUcWHLL_Cro"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "330033612093-5l1fajnep3bslu68divf7n68hbcklcdf.apps.googleusercontent.com",
+              "client_id": "469992452339-103tsfe1nccf0immmg52hsajg1h7k0es.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "330033612093-ue18gv3qhu2gjpvsf6usiundmaikmuaj.apps.googleusercontent.com",
+              "client_id": "469992452339-526v8s4eba0vpc0terg2gk0frcfp78vl.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com.wmdd4950.ytarutani-project"

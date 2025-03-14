@@ -32,6 +32,6 @@ const styles = StyleSheet.create({
   },
   itemText: {
     fontFamily: "open-sans",
-    fontSize: "17px",
+    fontSize: 17,
   },
 });

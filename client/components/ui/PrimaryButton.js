@@ -36,11 +36,17 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 16,
     elevation: 2, // shadow only for Android
+    // iOS Shadow
+    shadowColor: "black", // Shadow color
+    shadowOffset: { width: 0, height: 2 }, // Shadow position
+    shadowOpacity: 0.25, // How transparent the shadow is
+    shadowRadius: 4, // How blurred the shadow is
   },
   buttonText: {
     color: "white",
     textAlign: "center",
     fontWeight: "bold",
+    fontSize: 18,
   },
   // pressed btn styling for iOS
   pressed: {

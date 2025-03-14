@@ -45,7 +45,9 @@ export default function App() {
     setGuessRounds(0);
   };
 
-  let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
+  let screen = (
+    <StartGameScreen userInfo={userInfo} onPickNumber={pickedNumberHandler} />
+  );
   if (userNumber) {
     screen = (
       <GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />
@@ -60,13 +62,14 @@ export default function App() {
       />
     );
   }
+  // console.log(userInfo);
 
   return (
     <>
-      <StatusBar style="dark" />
+      <StatusBar style={userInfo ? "light" : "dark"} />
       {userInfo ? (
         <LinearGradient
-          colors={[Colors.primary700, Colors.accent500]}
+          colors={[Colors.primary800, Colors.accent500]}
           style={styles.rootScreen}
         >
           <ImageBackground

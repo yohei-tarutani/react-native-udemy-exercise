@@ -9,12 +9,12 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD5-mFgd15XUTklDdrxTl6CEKPasAvofLE",
-  authDomain: "react-native-udemy-exercise.firebaseapp.com",
-  projectId: "react-native-udemy-exercise",
-  storageBucket: "react-native-udemy-exercise.firebasestorage.app",
-  messagingSenderId: "330033612093",
-  appId: "1:330033612093:web:8b75534443643fb2b47154",
+  apiKey: "AIzaSyBSqnSz67b-gw2eNup3Tyd-1cMTge4NQbA",
+  authDomain: "strong-keyword-453402-d0.firebaseapp.com",
+  projectId: "strong-keyword-453402-d0",
+  storageBucket: "strong-keyword-453402-d0.firebasestorage.app",
+  messagingSenderId: "469992452339",
+  appId: "1:469992452339:web:bdd5fa4f0059ef8eb18786",
 };
 
 // Initialize Firebase

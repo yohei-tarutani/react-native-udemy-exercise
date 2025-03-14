@@ -7,13 +7,14 @@ import {
   useWindowDimensions,
   KeyboardAvoidingView,
   ScrollView,
+  Text,
 } from "react-native";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Title from "../components/ui/Title";
 import Colors from "../constants/Colors";
-const StartGameScreen = ({ onPickNumber }) => {
+const StartGameScreen = ({ onPickNumber, userInfo }) => {
   const [enteredNumber, setEnteredNumber] = useState("");
 
   const { width, height } = useWindowDimensions();
@@ -43,7 +44,10 @@ const StartGameScreen = ({ onPickNumber }) => {
     <ScrollView style={styles.screen}>
       <KeyboardAvoidingView style={styles.screen} behavior="position">
         <View style={[styles.rootContainer, { marginTop: marginTopDistance }]}>
-          <Title>Gues My Number</Title>
+          <Text style={styles.userNameText}>
+            Hi, {userInfo && userInfo.displayName.split(" ")[0]}!
+          </Text>
+          <Title>Guess My Number</Title>
           <Card>
             <InstructionText>Enter a Number</InstructionText>
             <TextInput
@@ -84,6 +88,19 @@ const styles = StyleSheet.create({
     // marginTop: deviceHeight < 400 ? 30 : 100,
     alignItems: "center",
   },
+  userNameText: {
+    fontSize: 36,
+    fontWeight: "bold",
+    color: Colors.accent500,
+    paddingBottom: 30,
+    paddingTop: 0,
+    elevation: 2, // shadow for Android
+    // iOS Shadow
+    shadowColor: "black", // Shadow color
+    shadowOffset: { width: 5, height: 5 }, // Shadow position
+    shadowOpacity: 0.5, // How transparent the shadow is
+    shadowRadius: 4, // How blurred the shadow is
+  },
   numberInput: {
     height: 50,
     width: 50,
@@ -91,7 +108,8 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.accent500,
     borderBottomWidth: 2,
     color: Colors.accent500,
-    marginVertical: 8,
+    marginTop: 10,
+    marginBottom: 18,
     fontWeight: "bold",
     textAlign: "center",
   },

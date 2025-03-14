@@ -13,6 +13,9 @@
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		96905EF65AED1B983A6B3ABC /* libPods-reactnativeudemy2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-reactnativeudemy2.a */; };
 		9B6C8774D3D84EA6BB26DDED /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7628CE341FF6471D9A054A5A /* noop-file.swift */; };
+		A2ED9A3B2D84DAA30037C75F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2ED9A3A2D84DAA20037C75F /* GoogleService-Info.plist */; };
+		A2ED9A3E2D84DB9C0037C75F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A2ED9A3D2D84DB9C0037C75F /* FirebaseAuth */; };
+		A2ED9A402D84DB9C0037C75F /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = A2ED9A3F2D84DB9C0037C75F /* FirebaseAuthCombine-Community */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		D7B5EAE01677FC5FDD1EAD6E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 1A677756CFD0F562553C22B0 /* PrivacyInfo.xcprivacy */; };
@@ -31,6 +34,7 @@
 		7628CE341FF6471D9A054A5A /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "reactnativeudemy2/noop-file.swift"; sourceTree = "<group>"; };
 		7739CBE8A62A41E0B6F25D5B /* reactnativeudemy2-Bridging-Header.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "reactnativeudemy2-Bridging-Header.h"; path = "reactnativeudemy2/reactnativeudemy2-Bridging-Header.h"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-reactnativeudemy2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reactnativeudemy2.release.xcconfig"; path = "Target Support Files/Pods-reactnativeudemy2/Pods-reactnativeudemy2.release.xcconfig"; sourceTree = "<group>"; };
+		A2ED9A3A2D84DAA20037C75F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = reactnativeudemy2/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -43,6 +47,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				96905EF65AED1B983A6B3ABC /* libPods-reactnativeudemy2.a in Frameworks */,
+				A2ED9A402D84DB9C0037C75F /* FirebaseAuthCombine-Community in Frameworks */,
+				A2ED9A3E2D84DB9C0037C75F /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +64,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				A2ED9A3A2D84DAA20037C75F /* GoogleService-Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
 				7628CE341FF6471D9A054A5A /* noop-file.swift */,
 				7739CBE8A62A41E0B6F25D5B /* reactnativeudemy2-Bridging-Header.h */,
@@ -187,6 +194,9 @@
 				Base,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
+			packageReferences = (
+				A2ED9A3C2D84DB9C0037C75F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -203,6 +213,7 @@
 			files = (
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				A2ED9A3B2D84DAA30037C75F /* GoogleService-Info.plist in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
 				D7B5EAE01677FC5FDD1EAD6E /* PrivacyInfo.xcprivacy in Resources */,
 			);
@@ -550,6 +561,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2ED9A3C2D84DB9C0037C75F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A2ED9A3D2D84DB9C0037C75F /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2ED9A3C2D84DB9C0037C75F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		A2ED9A3F2D84DB9C0037C75F /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2ED9A3C2D84DB9C0037C75F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }

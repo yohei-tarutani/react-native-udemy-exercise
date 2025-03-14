@@ -34,9 +34,9 @@ const GameOverScreen = ({ roundsNumber, userNumber, onStartNewGame }) => {
           />
         </View>
         <Text style={styles.summaryText}>
-          Your phone needed{" "}
-          <Text style={styles.hightlight}>{roundsNumber}</Text> rounds to guess
-          the number <Text style={styles.hightlight}>{userNumber}</Text>.
+          You needed <Text style={styles.hightlight}>{roundsNumber}</Text>{" "}
+          rounds to guess the number{" "}
+          <Text style={styles.hightlight}>{userNumber}</Text>.
         </Text>
         <PrimaryButton onPress={onStartNewGame}>Start New Game</PrimaryButton>
       </View>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     // height: deviceWidth < 400 ? 150 : 300,
     // borderRadius: deviceWidth < 400 ? 75 : 150,
     borderWidth: 3,
-    borderColor: Colors.primary800,
+    borderColor: "black",
     overflow: "hidden",
     margin: 36,
   },
@@ -80,5 +80,7 @@ const styles = StyleSheet.create({
   hightlight: {
     fontFamily: "open-sans-bold",
     color: Colors.primary600,
+    fontSize: 30,
+    fontWeight: "bold",
   },
 });

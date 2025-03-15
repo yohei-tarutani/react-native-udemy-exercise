@@ -15,6 +15,7 @@ This project is based on the Udemy tutorials below provided by Maximilian Schwar
   2. Configuring a Reverse Proxy with Apache
   3. Enforcing HTTPS with a SSL/TLS certificate
   4. Managing Processes with PM2 (to keep the backend running even after crashes or system reboots)
+  5. Protecting API using JWT
 
 ## Getting started the app:
 - Move to the client directory: `cd client`

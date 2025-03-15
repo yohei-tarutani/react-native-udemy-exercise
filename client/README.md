@@ -6,6 +6,10 @@ This project is based on the Udemy tutorials below provided by Maximilian Schwar
 
 ![Image](https://github.com/user-attachments/assets/8d7ea786-b68b-4e63-a1f5-08b6d7011d6e)
 
+- Applied a front-end authentication using OAuth2 (Firebase/Google) myself
+  
+
+
 ## Getting started the app:
 - Install dependencies: `npm install`
 - Start the Metro bundler: `npm start`

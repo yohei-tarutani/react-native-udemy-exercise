@@ -256,7 +256,7 @@ export default SigninScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fffdfd",
+    backgroundColor: "#f5f5f5",
     alignItems: "center",
     justifyContent: "center",
     rowGap: 12,
@@ -267,8 +267,14 @@ const styles = StyleSheet.create({
   },
   titleText: {
     fontSize: 46,
-    color: "#5a4949",
+    color: "#413737",
     fontWeight: "bold",
+    elevation: 2, // shadow for Android
+    // iOS Shadow
+    shadowColor: "yellow", // Shadow color
+    shadowOffset: { width: 3, height: 5 }, // Shadow position
+    shadowOpacity: 0.7, // How transparent the shadow is
+    shadowRadius: 4, // How blurred the shadow is
   },
   formContainer: {
     width: 340,

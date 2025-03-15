@@ -6,7 +6,9 @@ This project is based on the Udemy tutorials below provided by Maximilian Schwar
 
 ![Image](https://github.com/user-attachments/assets/8d7ea786-b68b-4e63-a1f5-08b6d7011d6e)
 
-## Getting started the app (using Expo Go):
-- Runs the app on terminal by `npm start`
-- Press "i" to open iOS simulator or Press "a" to open Android simulator
-- Press "r" to reflesh if that doesn't open the app.
+## Getting started the app:
+- Install dependencies: `npm install`
+- Start the Metro bundler: `npm start`
+- Run the app on the iOS simulator (Prebuilt, Not Using Expo Go): `npm run ios`
+- Run the app on the Android simulator (Using Expo Go or Prebuilt APK): `npm run android`
+- Press "r" to reload if the app doesn't open.

@@ -11,10 +11,8 @@ import {
   View,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-// import { useNavigation } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 // Authentication
-import * as WebBrowser from "expo-web-browser";
 import * as Google from "expo-auth-session/providers/google";
 import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
 import { auth } from "../config/firebaseConfig";
@@ -25,8 +23,6 @@ import {
   iosClientId,
   redirectUri,
 } from "../config/googleConfig";
-
-WebBrowser.maybeCompleteAuthSession();
 
 const SigninScreen = ({ setUserInfo }) => {
   // Google & Firebase sign-in
@@ -46,10 +42,10 @@ const SigninScreen = ({ setUserInfo }) => {
 
   const handleFirebaseSignIn = async (idToken) => {
     try {
+      await auth.signOut(); // Ensure no previous session
       const credential = GoogleAuthProvider.credential(idToken);
       const userCredential = await signInWithCredential(auth, credential);
       const user = userCredential.user;
-
       await AsyncStorage.setItem("userInfo", JSON.stringify(user));
       setUserInfo(user);
     } catch (error) {
@@ -66,8 +62,6 @@ const SigninScreen = ({ setUserInfo }) => {
 
   const [passwordIsSecure, setPasswordIsSecure] = useState(true);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  // const navigation = useNavigation();
 
   const [isEmailFocused, setIsEmailFocused] = useState(false);
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
@@ -237,24 +231,17 @@ const SigninScreen = ({ setUserInfo }) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.googleButton}
-          // onPress={() => promptAsync()}
           onPress={() => promptAsync()}
         >
           <Image source={require("../assets/images/google-signin-icon.png")} />
           <Text style={styles.googleButtonText}>Continue with Google</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.forgetPasswordButton}
-          // onPress={() => navigation.navigate("ResetPW_request")}
-        >
+        <TouchableOpacity style={styles.forgetPasswordButton}>
           <Text style={styles.forgetPasswordButtonText}>Forget Password?</Text>
         </TouchableOpacity>
         <View style={styles.signupTextContainer}>
           <Text style={styles.signupText}>Don't have an account?</Text>
-          <TouchableOpacity
-            style={styles.signupLinkButton}
-            // onPress={() => navigation.navigate("Registration")}
-          >
+          <TouchableOpacity style={styles.signupLinkButton}>
             <Text style={styles.signupLinkText}>Sign up</Text>
           </TouchableOpacity>
           <Text style={styles.signupText}>here</Text>
@@ -273,14 +260,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     rowGap: 12,
-    paddingTop: 140,
+    paddingTop: 150,
   },
   titleContainer: {
-    marginBottom: 80,
+    marginBottom: 86,
   },
   titleText: {
-    fontSize: 50,
+    fontSize: 46,
     color: "#5a4949",
+    fontWeight: "bold",
   },
   formContainer: {
     width: 340,

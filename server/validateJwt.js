@@ -14,7 +14,9 @@ const verifyGoogleToken = async (token) => {
     const ticket = await client.verifyIdToken({
       // Calls Google’s API to verify the ID token of the client.
       idToken: token,
-      audience: null,
+      audience:
+        "469992452339-drpc28p7o5459hbvs5ak7u551ao2u7no.apps.googleusercontent.com",
+      // null,
       // No need to specify CLIENT_ID, works for all Google tokens
       // Normally, this should be set to a Google Client ID to ensure the token is meant for a specific app. But here, 'null' allows verification for all Google-issued tokens.
     });

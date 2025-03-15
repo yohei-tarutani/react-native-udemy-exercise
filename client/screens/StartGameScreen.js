@@ -8,13 +8,45 @@ import {
   KeyboardAvoidingView,
   ScrollView,
   Text,
+  TouchableOpacity,
 } from "react-native";
 import Card from "../components/ui/Card";
 import InstructionText from "../components/ui/InstructionText";
 import PrimaryButton from "../components/ui/PrimaryButton";
 import Title from "../components/ui/Title";
 import Colors from "../constants/Colors";
-const StartGameScreen = ({ onPickNumber, userInfo }) => {
+
+import { auth } from "../config/firebaseConfig";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+const StartGameScreen = ({ onPickNumber, userInfo, setUserInfo }) => {
+  // Sign-out function
+  const handleSignOut = async () => {
+    try {
+      Alert.alert("Sign out", "Are you sure to sign out?", [
+        {
+          text: "Cancel",
+          style: "cancel",
+        },
+        {
+          text: "Yes",
+          style: "destructive",
+          onPress: async () => {
+            await auth.signOut(); // Firebase sign out
+            console.log("User signed out successfully.");
+
+            // Clear userInfo from AsyncStorage
+            await AsyncStorage.removeItem("userInfo");
+            // Reset userInfo state to redirect to the sign-in screen
+            setUserInfo(null);
+          },
+        },
+      ]);
+    } catch (error) {
+      console.error("Sign-out error: ", error.message);
+    }
+  };
+
   const [enteredNumber, setEnteredNumber] = useState("");
 
   const { width, height } = useWindowDimensions();
@@ -71,6 +103,12 @@ const StartGameScreen = ({ onPickNumber, userInfo }) => {
               </View>
             </View>
           </Card>
+          <TouchableOpacity
+            onPress={handleSignOut}
+            style={styles.signoutButton}
+          >
+            <Text style={styles.signoutText}>Sign out</Text>
+          </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>
     </ScrollView>
@@ -119,4 +157,35 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
   },
+  signoutButton: {
+    backgroundColor: Colors.primary600,
+    borderRadius: 28,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    marginTop: 200,
+  },
+  signoutText: {
+    color: "white",
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 18,
+  },
 });
+
+// buttonInnerContainer: {
+//   backgroundColor: Colors.primary500,
+//   paddingVertical: 8,
+//   paddingHorizontal: 16,
+//   elevation: 2, // shadow only for Android
+//   // iOS Shadow
+//   shadowColor: "black", // Shadow color
+//   shadowOffset: { width: 0, height: 2 }, // Shadow position
+//   shadowOpacity: 0.25, // How transparent the shadow is
+//   shadowRadius: 4, // How blurred the shadow is
+// },
+// buttonText: {
+//   color: "white",
+//   textAlign: "center",
+//   fontWeight: "bold",
+//   fontSize: 18,
+// },

@@ -46,7 +46,11 @@ export default function App() {
   };
 
   let screen = (
-    <StartGameScreen userInfo={userInfo} onPickNumber={pickedNumberHandler} />
+    <StartGameScreen
+      userInfo={userInfo}
+      setUserInfo={setUserInfo}
+      onPickNumber={pickedNumberHandler}
+    />
   );
   if (userNumber) {
     screen = (

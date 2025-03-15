@@ -38,6 +38,7 @@ const auth = async (req, res, next) => {
   // Calls next() to proceed to the next middleware or route handler.
 };
 
+// Protected API endpoints
 app.get("/", auth, (req, res) => {
   res.send("Backend API is running!");
 });

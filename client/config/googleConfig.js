@@ -1,8 +1,12 @@
 import * as AuthSession from "expo-auth-session";
+import { Platform } from "react-native";
 
 export const redirectUri = AuthSession.makeRedirectUri({
-  useProxy: true, // For testing in Expo Go
-  native: "com.wmdd4950.ytarutani-project:/oauthredirect", // For standalone builds (iOS)
+  // useProxy: true, // For testing in Expo Go
+  native: Platform.select({
+    ios: "com.wmdd4950.ytarutani-project:/oauthredirect", // iOS bundle ID
+    android: "com.wmdd4950.ytarutani_project:/oauthredirect", // Android package name
+  }),
 });
 // console.log("Redirect URI:", redirectUri);
 

@@ -19,6 +19,9 @@
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		D7B5EAE01677FC5FDD1EAD6E /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 1A677756CFD0F562553C22B0 /* PrivacyInfo.xcprivacy */; };
+		5B5867D5334C4EC9B7A0F9BC /* BungeeInline-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFDD8E8F22F540B4B01296A3 /* BungeeInline-Regular.ttf */; };
+		39B476FF8214424A9FFC07D6 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 092FA1D261074B4EA718F28E /* OpenSans-Bold.ttf */; };
+		590AB0142F4D45BAA1B28B90 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 032C1171754D44B9A7488CCC /* OpenSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-reactnativeudemy2/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		AFDD8E8F22F540B4B01296A3 /* BungeeInline-Regular.ttf */ = {isa = PBXFileReference; name = "BungeeInline-Regular.ttf"; path = "../assets/fonts/BungeeInline-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		092FA1D261074B4EA718F28E /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; name = "OpenSans-Bold.ttf"; path = "../assets/fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		032C1171754D44B9A7488CCC /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; name = "OpenSans-Regular.ttf"; path = "../assets/fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
 				D7E4C46ADA2E9064B798F356 /* ExpoModulesProviders */,
+				DECE2000823545A8BF8D497D /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -145,6 +152,17 @@
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
+		};
+		DECE2000823545A8BF8D497D /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				AFDD8E8F22F540B4B01296A3 /* BungeeInline-Regular.ttf */,
+				092FA1D261074B4EA718F28E /* OpenSans-Bold.ttf */,
+				032C1171754D44B9A7488CCC /* OpenSans-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -216,6 +234,9 @@
 				A2ED9A3B2D84DAA30037C75F /* GoogleService-Info.plist in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
 				D7B5EAE01677FC5FDD1EAD6E /* PrivacyInfo.xcprivacy in Resources */,
+				5B5867D5334C4EC9B7A0F9BC /* BungeeInline-Regular.ttf in Resources */,
+				39B476FF8214424A9FFC07D6 /* OpenSans-Bold.ttf in Resources */,
+				590AB0142F4D45BAA1B28B90 /* OpenSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

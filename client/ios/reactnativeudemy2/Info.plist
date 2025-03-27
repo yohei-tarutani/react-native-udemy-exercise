@@ -79,7 +79,6 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>BungeeInline-Regular.ttf</string>
 		<string>OpenSans-Bold.ttf</string>
 		<string>OpenSans-Regular.ttf</string>
 	</array>

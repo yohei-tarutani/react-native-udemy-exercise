@@ -46,8 +46,6 @@ const GameOverScreen = ({ roundsNumber, userNumber, onStartNewGame }) => {
 
 export default GameOverScreen;
 
-// const deviceWidth = Dimensions.get("window").width;
-
 const styles = StyleSheet.create({
   screen: {
     flex: 1,

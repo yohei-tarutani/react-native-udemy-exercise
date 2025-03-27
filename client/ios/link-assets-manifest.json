@@ -2,10 +2,6 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "assets/fonts/BungeeInline-Regular.ttf",
-      "sha1": "f117c024edbe387b0a79c53f60b08b361065bcc1"
-    },
-    {
       "path": "assets/fonts/OpenSans-Bold.ttf",
       "sha1": "0ad533c702f9ac1de717063040426858662cfbcc"
     },

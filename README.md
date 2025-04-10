@@ -1,5 +1,6 @@
 # React Native exercise project from an Udemy course
 The client side of this project is based on the Udemy tutorials below provided by Maximilian Schwarzmüller.
+I added some server side configurations including OAuth2 authentication with JWT for sign-in.
 
 # Client directory
 - React Native - The Practical Guide [2025]: https://www.udemy.com/course/react-native-the-practical-guide/?couponCode=2021PM20
